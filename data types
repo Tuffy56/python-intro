@@ -1,0 +1,16 @@
+#strings
+eman = 'Tuff'
+sex = 'Male'
+favfood = 'tacos'
+#floats
+height = '5.11'
+#integer
+age = "16"
+#booleans
+awesome = True
+
+
+
+print ('my name is: '+ eman)
+print ('my favorite_food:'+favfood)
+print ('my age is:'+ age)
