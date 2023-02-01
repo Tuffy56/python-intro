@@ -1,0 +1,21 @@
+#integers
+#varible and values 
+#variables are 'things' that can be changed
+#variables are representions 
+ailen1 ='jhon'
+ailen2 ='floor'
+ailen3 ='door'
+ailen4 ='wall'
+print('possible ailens')
+
+
+#print all nouns verticlly
+print(ailen1)
+print(ailen2)
+print(ailen3)
+print(ailen4)
+
+#array
+ailens =['jhon','floor','door','wall']
+for ailen in ailens:
+    print(ailen)
