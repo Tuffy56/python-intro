@@ -1,0 +1,6 @@
+first_name = 'Tuff'
+last_name = 'Thompson'
+birth_year = 2006
+current_year = 2023
+
+print('my name is ' + first_name +" "+ last_name +'I am' ' '+str(current_year-birth_year))
