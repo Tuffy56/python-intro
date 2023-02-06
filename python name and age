@@ -4,6 +4,7 @@ birth_year = 2006
 current_year = 2023
 
 print('my name is ' + first_name +" "+ last_name +'I am' ' '+str(current_year-birth_year))
+did this minuts
 #ask me what my name is
 first_name = input ('what is your first name?')
 #ask me what my last name is
@@ -16,7 +17,7 @@ print ("eh welcome," + first_name.capitalize() + " " + last_name.capitalize() )
 
 
 
-
+did this feb 6th
 #ask me what my name is
 first_name = input ('what is your first name?')
 #ask me what my last name is
