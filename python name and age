@@ -4,3 +4,10 @@ birth_year = 2006
 current_year = 2023
 
 print('my name is ' + first_name +" "+ last_name +'I am' ' '+str(current_year-birth_year))
+#ask me what my name is
+first_name = input ('what is your first name?')
+#ask me what my last name is
+last_name = input ('what is your last name?')
+
+#prints a statment to welcome me
+print ("eh welcome," + first_name.capitalize() + " " + last_name.capitalize() )
