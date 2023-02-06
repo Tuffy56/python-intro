@@ -11,3 +11,19 @@ last_name = input ('what is your last name?')
 
 #prints a statment to welcome me
 print ("eh welcome," + first_name.capitalize() + " " + last_name.capitalize() )
+
+
+
+
+
+
+#ask me what my name is
+first_name = input ('what is your first name?')
+#ask me what my last name is
+last_name = input ('what is your last name?')
+
+def doorTxt(icoming_text ):
+    formatted_text = incoming_text.capitalize()
+    return formatted_text
+#prints a statment to welcome me
+print (f"eh welcome, {doorTxt(first_name)} {doorTxtlast_name} ")
