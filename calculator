@@ -1,0 +1,18 @@
+useroperation = input("for two numbers,do you wish to add,subtract,mutiply,divide")
+
+user_num1 = int(input("please enter number one:"))
+user_num2 = int(input("please enter number two:"))
+
+def add_numbers(a, b):
+    sum_numbers = a + b
+    return f'{a} + {b} = {a + b}'
+
+if useroperation =="ADD":
+    print(add_numbers(user_num1, user_num2))
+    
+def sub_numbers(a, b):
+    diff_numbers = a- b 
+    return f'{a} + {b} = {a-b}'
+
+if useroperation =="subtract":
+    print(add_numbers(user_num1, user_num2))
