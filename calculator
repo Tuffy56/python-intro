@@ -16,3 +16,10 @@ def sub_numbers(a, b):
 
 if useroperation =="subtract":
     print(add_numbers(user_num1, user_num2))
+a=2
+b=1.9
+
+if a == a:
+    print("yes")
+else:
+    print("no")
