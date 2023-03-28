@@ -1,0 +1,56 @@
+################
+#turtle race 
+#tuff thompson
+#march 16 2023
+#basic turtle - using muliple turtles and random numbers
+################
+import random
+import turtle
+#after bobs premotion
+
+#turtles
+jim = turtle.Turtle()
+jim.color("red")
+tim = turtle.Turtle()
+tim.color("green")
+bob = turtle.Turtle()
+bob.color("black")
+
+race_w = 220
+race_h = 55
+
+def form_racetrack():
+  bob.penup()
+  bob.goto(race_w,-race_h)
+  bob.pendown()
+  for x in range(3):
+    bob.lt(90)
+    bob.fd(2*race_h)
+    bob.lt(90)
+    bob.fd(2*race_w)
+   
+
+def ready_up(turtle1,turtle2):
+ turtle1.penup()
+ turtle1.goto(-150,22)
+ turtle2.penup()
+ turtle2.goto(-150,-22)
+
+def move (turtle1,turtle2):
+  turtle1.fd(random.randint(1,14))
+  turtle2.fd(random.randint(1,12))
+  
+def race (turtle1,turtle2):
+  while turtle1.xcor()<race_w and turtle2.xcor()<race_w:
+    move(turtle1,turtle2)
+
+def wintext (turtle1,turtle2):
+  jim.penup()
+  jim.goto(230,22)
+  jim.write("winner",font="arial" )
+  
+  
+form_racetrack()
+ready_up(jim,tim)
+race(jim,tim)
+wintext(jim,tim)
