@@ -13,12 +13,8 @@ u=0
 end = 22
 
 while u <= end:
-    
     if u%3 == 0:
         fizzbuzz.append("fizz")
-        u+=1
+    u+=1
         
 print (f"{fizzbuzz}")
-
-
-u+=1
