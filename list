@@ -1,0 +1,24 @@
+my_collection = []
+print (f"origianl list: {my_collection}")
+
+while u < 10:
+    my_collection.append(u)
+    u+=1
+
+print (f"Fianl list:{my_collection}")
+#empty game list
+fizzbuzz = []
+
+u=0
+end = 22
+
+while u <= end:
+    
+    if u%3 == 0:
+        fizzbuzz.append("fizz")
+        u+=1
+        
+print (f"{fizzbuzz}")
+
+
+u+=1
