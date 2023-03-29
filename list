@@ -15,6 +15,11 @@ end = 22
 while u <= end:
     if u%3 == 0:
         fizzbuzz.append("fizz")
+    else u%5 == 0:
+        fizzbuzz.append("buzz")
+    elif u%3 == 0 and u%5 ==0:
+        fizzbuzz.append("fizzbuzz")
+    
     u+=1
         
 print (f"{fizzbuzz}")
