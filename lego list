@@ -1,0 +1,19 @@
+ #the lego list
+lego_list = [(5,5),(-5,5),(-5,-5),(5,-5)]
+legos = []
+
+
+for lego in lego_list:
+    if lego [0]> 0 and lego[1] >0:
+        legos.append("lego1")
+    elif lego [0]< 0 and lego[1] >0:
+        legos.append("lego2")
+    elif lego [0]< 0 and lego[1] >0:
+        legos.append("lego3")
+    elif lego [0]> 0 and lego[1] >0:
+        legos.append("lego4")
+    else:
+        print("not quad")
+
+for i in range(len(lego_list)):
+    print (f"{lego_list [i]}is found in {lego}")
