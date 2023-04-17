@@ -1,0 +1,36 @@
+###Task: User System that can create a new user (first name, last name, username > tuple) or print all current users. We will use EasyGUI to ask our questions/makeusers and to print our list.
+
+###Access EasyGUI
+import easygui as easy
+###Screen/Output?
+screen = easy.choicebox("create a user or create list with exiting user","choose:")
+
+
+###List definitions
+#current_users
+
+
+###User Data Types (Temporary)
+##first_name
+##last_name
+msg = "Enter your information"
+title = "Demographics"
+info = ["First Name", "Last Name"]
+
+rValues = []  
+rValues = easy.multenterbox(msg,title,info)
+
+
+##username
+
+###Helper Functions
+#MakeUser - Should ask for three inputs and store a tuple
+#StoreUser - Take output from MakeUser and append to current_users
+#PrintUsers - Prints all current users
+#Optional: Check for numerics in first and last - use with make a user?
+#Optional: Random Username based on first name
+
+
+###Main Program Loop
+#Conditions to run our program and ask our questions
+#Way to exit the program (Stops the while loop)
