@@ -1,0 +1,102 @@
+import pygame, sys
+import easygui
+from random import randint, uniform 
+import math
+#Game Setup
+pygame.init()
+pygame.display.set_caption('Asteroid Clone - OOP')
+SCREEN_W, SCREEN_H = 1280, 720 
+display_surface = pygame.display.set_mode((SCREEN_W, SCREEN_H))
+clock = pygame.time.Clock()
+
+#background
+background_surface = pygame.image.load("./Sprites/background.png").convert_alpha()
+
+#spaceship run 
+comship = pygame.image.load("./Sprites/player.png").convert_alpha()
+ship_rect = comship.get_rect(center = (SCREEN_W/2,SCREEN_H/2))
+ship_rect.center = pygame.mouse.get_pos()
+
+#lasers from comship
+laser = pygame.image.load("./Sprites/laser.png")
+laser_rect = laser.get_rect(midbottom = ship_rect.midtop)
+laser_list = []
+
+#astriods
+asteriod = pygame.image.load("./sprites/asteroid.png").convert_alpha()
+asteriod_list = []
+
+
+def laser_update(laser_list):
+    for rect in laser_list:
+        rect.y -=3
+        if rect.bottom < 0:
+            laser_list.remove(rect)
+
+def asteriod_update(asteriod_list, speed = 1):
+    for asteriod_tuple in asteriod_list:
+        asteriod_rect = asteriod_tuple [0] 
+        direction = asteriod_tuple [1]
+        asteriod_rect = asteriod.center = direction*speed
+        if asteriod_rect.top>SCREEN_H:
+            asteriod_list.remove(asteriod_tuple)
+#make the maouse move with ship 
+#def mousemove():
+ #print(pygame.mouse.get_pos())
+
+asteriod_spawn_rate = 350
+asteriod_timer = pygame.event.custom_type()
+pygame.time.set_timer(asteriod_timer,asteriod_spawn_rate)
+
+
+#Main Game Loop
+while True:
+  for event in pygame.event.get():
+    if event.type == pygame.QUIT:
+        pygame.quit()
+        sys.exit()
+    if event.type == pygame.MOUSEBUTTONDOWN:
+        if event.button == 1:
+            laser_rect = laser.get_rect(midbottom =ship_rect.midtop)
+            laser_list.append(laser_rect)
+    if event.type == asteriod_timer:
+        pos_x = randint(-100,SCREEN_W+100)
+        pos_y = randint( -100,SCREEN_H -50)
+        spawn_point = (pos_x,pos_y)
+        asteriod_rect =asteriod.get_rect(center = spawn_point)
+        spawn_direction = pygame.math.Vector2(uniform(-2,2),uniform(0.2,1.0))
+        asteriod_list.append((asteriod_rect,spawn_direction))
+     
+  clock.tick(165)
+    
+
+  ship_rect.center = pygame.mouse.get_pos()
+  laser_update(laser_list)
+  display_surface.fill((0,0,0))
+  display_surface.blit(background_surface,(0,78))
+  display_surface.blit(comship,ship_rect)
+  
+  #oject movement
+  laser_update(laser_list)
+  asteriod_update(asteriod_list,randint(10,6))
+  #collitions
+  for asteriod_tuple in asteriod_list:
+      asteriod_rect = asterid_tuple[0]
+      if ship_rect.colliderrect (asteriod_rect):
+          pygame.quit()
+          sys.exit()
+          
+  for asteriod_tuple in asteriod_list:
+      for laser_rect in laser_list:
+          if asertiod_tuple[0].colliderect(laser_rect):
+              asteriod_list.remove(asertiod_tuple)
+              laser_list.remove(laser_rect)
+              
+              
+  for rect in laser_list:
+      display_surface.blit(laser,rect)
+  for asteriod_tuple in asteriod_list:
+      display_surface.blit(asteriod, asteriod_tuple[0])
+
+  pygame.display.update()
+#mousemove()
